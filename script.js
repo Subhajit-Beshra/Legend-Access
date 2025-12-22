@@ -1,34 +1,41 @@
-body {
-  background: black;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+const terminal = document.getElementById("terminal");
+const btn = document.getElementById("startBtn");
 
-#terminal-box {
-  width: 85%;
-  max-width: 800px;
-  padding: 24px;
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 15px #00ff00;
-}
+const lines = [
+  "Initializing system breach...",
+  "Bypassing firewall...",
+  "Decrypting encrypted data...",
+  "Accessing root privileges...",
+  "Loading birthday protocol...",
+  "",
+  "ACCESS GRANTED ✔",
+  "",
+  "User Identified : Debopriyo Pandit",
+  "Role           : LEGENDARY BROTHER",
+  "Clearance      : MAXIMUM",
+  "",
+  "Injecting birthday payload...",
+  "Compiling wishes...",
+  "Removing bugs from life...",
+  "",
+  "🎉 HAPPY BIRTHDAY, DEBOPRIYO 🎂",
+  "May your code compile on first try 🚀",
+  "May your bugs be few and commits be clean 💻",
+  "",
+  ">> SYSTEM STATUS : BROTHERHOOD = ∞",
+  "",
+  "Session terminated successfully."
+];
 
-#terminal {
-  white-space: pre-wrap;
-  font-size: 15px;
-  line-height: 1.6;
+let i = 0;
+function typeLine(){
+  if(i < lines.length){
+    terminal.textContent += lines[i]+"\n";
+    i++;
+    setTimeout(typeLine, 450);
+  }
 }
-
-#startBtn {
-  position: absolute;
-  bottom: 40px;
-  background: black;
-  color: #00ff00;
-  border: 1px solid #00ff00;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-family: monospace;
-}
+btn.addEventListener("click", ()=> {
+   btn.style.display= "none";
+   typeLine();
+})
