@@ -3,32 +3,58 @@ body {
   color: #00ff00;
   font-family: "Courier New", monospace;
   height: 100vh;
+  margin: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden; /* prevent page scroll */
 }
 
+/* Terminal container */
 #terminal-box {
   width: 85%;
   max-width: 800px;
   padding: 24px;
   border: 2px solid #00ff00;
   box-shadow: 0 0 15px #00ff00;
+  box-sizing: border-box;
 }
 
+/* Terminal output area */
 #terminal {
   white-space: pre-wrap;
   font-size: 15px;
   line-height: 1.6;
+
+  max-height: 60vh;      /* key fix */
+  overflow-y: auto;      /* smooth scroll */
+  padding-right: 6px;
+  scroll-behavior: smooth;
 }
 
+/* Start button */
 #startBtn {
   position: absolute;
   bottom: 40px;
+
   background: black;
   color: #00ff00;
   border: 1px solid #00ff00;
   padding: 10px 20px;
   cursor: pointer;
   font-family: monospace;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+  #terminal {
+    font-size: 14px;
+    max-height: 65vh;
+  }
+
+  #startBtn {
+    bottom: 20px;
+  }
 }
