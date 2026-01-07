@@ -2,7 +2,7 @@ const terminal = document.getElementById("terminal");
 const btn = document.getElementById("startBtn");
 
 const lines = [
-  "Happy 18th Birthday 🎉✨ Oiswyee 💛",
+  "Happy 18th Birthday 🎉✨ Oisweyee 💛",
   "Not my first or last love — but a constant one 🤍",
   "They say 18 is the start of a new chapter.",
   "But to me, you have always been a part of my story 📖✨",
@@ -47,3 +47,4 @@ btn.addEventListener("click", () => {
   btn.style.display = "none";
   typeLine();
 });
+
